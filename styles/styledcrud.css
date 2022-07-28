@@ -8,6 +8,8 @@
     padding: 0;
 }
 
+.ais-SearchBox { margin: 1em 0; }
+
 @font-face {
     font-family: "Noto-Sans";
     src: url("../NotoSans-Regular.ttf") format("ttf");

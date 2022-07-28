@@ -6,16 +6,16 @@
     <title>Styled CRUD</title>
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
     <link rel="stylesheet" href="./styles/styledcrud.css">
+    <script src="scripts/anime.js"></script>
+
     <script type="module">
         import * as Posts from './scripts/blog.js';
         import examplePosts from './scripts/examples.js';
 
-        // First, let's define the book elements.
+        // First, let's define the post elements.
         Posts.definePostElements();
 
-
-
-        // Second, populate our DB with the example books if we don't have any.
+        // Second, populate our DB with the example posts if we don't have any.
         if (Posts.countPosts() === 0) {
             for (const post of examplePosts) {
                 Posts.insertPost(post);
@@ -28,7 +28,7 @@
             Posts.redisplayAllPosts(postsContainer);
 
 
-            // Now, let's set up our form so we can use it for adding books.
+            // Now, let's set up our form so we can use it for adding posts.
             const addPostForm = document.getElementById("insert-post-form");
             addPostForm.addEventListener("submit", (ev) => {
                 // Stop the form submission event from continuing and refreshing the page.
@@ -41,22 +41,31 @@
                 // Validate the form data
                 if (Posts.validatePost(formData)) {
                     // console.log(ev.target);
-                    // The names of our form fields are identical to our book JSON, so just copy it over.
+                    // The names of our form fields are identical to our post JSON, so just copy it over.
                     const post = {};
                     for (const [key, value] of formData.entries()) {
                         post[key] = value;
                     }
 
-
-                    // Insert the new book we just made and redisplay the books!
+                    // Insert the new post we just made and redisplay the books!
                     Posts.insertPost(post);
                     Posts.redisplayAllPosts(postsContainer);
                 } else {
                     console.log('unsuccessful');
                 }
             });
+
+            // anime function
+            const elements = document.querySelectorAll('post-article *');
+            anime({
+                targets: elements,
+                opacity: [0, 1],
+                duration : 1000,
+                easing: 'linear'
+            });
         });
     </script>
+
 
     <template id="post-template">
         <post-article class="article">
@@ -112,9 +121,7 @@
                 </fieldset>
             </form>
         </dialog>
-
     </template>
-
 </head>
 <body>
 
@@ -128,7 +135,6 @@
         </ul>
     </nav>
 </header>
-
 
 <main>
     <h1 class="blog-heading">Blog</h1>
@@ -152,8 +158,6 @@
             </fieldset>
         </form>
     </section>
-
-
 </main>
 
 <footer>
