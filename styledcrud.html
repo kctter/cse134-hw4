@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>CRUD</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Styled CRUD</title>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <link rel="stylesheet" href="./styles/styledcrud.css">
     <script type="module">
         import * as Posts from './scripts/blog.js';
         import examplePosts from './scripts/examples.js';
@@ -56,20 +59,21 @@
     </script>
 
     <template id="post-template">
-        <post-article>
-            <post-title>
-                <h1>Title</h1>
-            </post-title>
-            <post-date>
-                <p>Date</p>
-            </post-date>
-            <post-summary>
-                <p>Lorem ipsum dolor sit amet...</p>
-            </post-summary>
-            <post-options>
+        <post-article class="article">
+            <post-options class="blog-option">
                 <button type="button" id="edit-button">Edit</button>
                 <button type="button" id="delete-button">Delete</button>
             </post-options>
+            <post-title>
+                <h1 class="blog-title">Title</h1>
+            </post-title>
+            <post-date>
+                <p class="blog-date">Date</p>
+            </post-date>
+            <post-summary>
+                <p class="blog-summary">Lorem ipsum dolor sit amet...</p>
+            </post-summary>
+
         </post-article>
     </template>
 
@@ -77,7 +81,7 @@
         <dialog id="custom-dialog">
             <p id="dialog-message"></p>
             <button id="ok-button" value="true" type="button">OK</button>
-<!--            <button id="cancel-button" value="false" type="button">Cancel</button>-->
+            <!--            <button id="cancel-button" value="false" type="button">Cancel</button>-->
         </dialog>
     </template>
 
@@ -87,22 +91,22 @@
                 <fieldset>
                     <legend>Edit</legend>
                     <post-title>
-                    <label for="title">Title</label>
-                    <input type="text" id="edit-title" name="title" placeholder="Title">
+                        <label for="title">Title</label>
+                        <input type="text" id="edit-title" name="title" placeholder="Title">
                     </post-title>
                     <br>
                     <post-date>
-                    <label for="date">Date</label>
-                    <input type="date" id="edit-date" name="date">
+                        <label for="date">Date</label>
+                        <input type="date" id="edit-date" name="date">
                     </post-date>
                     <br>
                     <post-summary>
-                    <label for="summary">Summary</label>
-                    <textarea name="summary" id="edit-summary" cols="65" rows="10" placeholder="Lorem ipsum dolor sit amet..."></textarea>
+                        <label for="summary">Summary</label>
+                        <textarea name="summary" id="edit-summary" cols="65" rows="10" placeholder="Lorem ipsum dolor sit amet..."></textarea>
                     </post-summary>
                     <br>
                     <post-options>
-                    <input type="submit" value="Edit">
+                        <input type="submit" value="Edit">
                         <button type="button" id="cancel-button">Cancel</button>
                     </post-options>
                 </fieldset>
@@ -115,21 +119,23 @@
 <body>
 
 <header>
+    <!-- navbar -->
     <nav>
         <ul class="top-nav">
-            <li><a href="./">Home</a></li>
-            <li><a class="active" href="./crud.html">CRUD</a></li>
+            <li><a class="active" href="./">Home</a></li>
+            <li><a href="./crud.html">CRUD</a></li>
+            <li><a class="active" href="./styledcrud.html">New CRUD</a></li>
         </ul>
     </nav>
 </header>
 
 
 <main>
-    <h1>Blog</h1>
+    <h1 class="blog-heading">Blog</h1>
     <hr>
-    <section id="posts"></section>
+    <section id="posts" class="blogs"></section>
     <hr>
-    <section>
+    <section class="add-post">
         <form id="insert-post-form" action="">
             <fieldset>
                 <legend>Add a Post</legend>
@@ -146,7 +152,15 @@
             </fieldset>
         </form>
     </section>
+
+
 </main>
+
+<footer>
+    <hr>
+    <p>&copy; 2022 Henry Chan</p>
+</footer>
+
 
 </body>
 </html>

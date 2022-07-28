@@ -4,26 +4,23 @@
 export default [
     {
         "title": "Modern Software Engineering",
-        "date": "2020-01-01",
-        "summary": "Writing for programmers, managers, and technical leads at all levels of experience, Farley illuminates durable principles at the heart of effective software development. He distills the discipline into two core exercises: learning and exploration and managing complexity. For each, he defines principles that can help you improve everything from your mindset to the quality of your code, and describes approaches proven to promote success."
+        "date": "2019-05-06",
+        "summary": "It's an unfortunate reality that we don't teach people how to make money (beyond getting a 9 to 5 job) as part of our education system. The truth is there are a lot of different, legitimate ways to make money. That doesn't mean they are easy and that you won't have to work hard to succeed, but it does mean that if you're willing to open your mind a bit you don't have to be stuck in an office from 9 to 5 for the next fifty years o your life."
 
+    },
+    {
+        "title": "Stones in the Tree",
+        "date": "2020-06-29",
+        "summary": "Trees. It was something about the trees. The way they swayed with the wind in unison. The way they shaded the area around them. The sounds of their leaves in the wind and the creaks from the branches as they sway, The trees were making a statement that I just couldn't understand."
+    },
+    {
+        "title": "The Wife's Burger",
+        "date": "2022-04-01",
+        "summary": "It was just a burger. Why couldn't she understand that? She knew he'd completely changed his life around her eating habits, so why couldn't she give him a break this one time? She wasn't even supposed to have found out. Yes, he had promised her and yes, he had broken that promise, but still in his mind, all it had been was just a burger."
+    },
+    {
+        "title": "Search of Colorado",
+        "date": "2022-06-15",
+        "summary": "I'm heading back to Colorado tomorrow after being down in Santa Barbara over the weekend for the festival there. I will be making October plans once there and will try to arrange so I'm back here for the birthday if possible. I'll let you know as soon as I know the doctor's appointment schedule and my flight plans."
     }
-    // {
-    //     "title": "The Mythical Man Month",
-    //     "author": "Fred Brooks",
-    //     "cover": "img/mythical-man-month.jpg",
-    //     "comments": "The Mythical Man-Month: Essays on Software Engineering is a book on software engineering and project management by Fred Brooks first published in 1975, with subsequent editions in 1982 and 1995. Its central theme is that \"adding manpower to a late software project makes it later.\" This idea is known as Brooks's law, and is presented along with the second-system effect and advocacy of prototyping."
-    // },
-    // {
-    //     "title": "The Pragmatic Programmer",
-    //     "author": "Andrew Hunt & David Thomas",
-    //     "cover": "img/pragmatic-programmer.jpg",
-    //     "comments": "The Pragmatic Programmer: From Journeyman to Master is a book about computer programming and software engineering, written by Andrew Hunt and David Thomas and published in October 1999. The book does not present a systematic theory, but rather a collection of tips to improve the development process in a pragmatic way. The main qualities of what the authors refer to as a pragmatic programmer are being an early adopter, to have fast adaptation, inquisitiveness and critical thinking, realism, and being a jack-of-all-trades."
-    // },
-    // {
-    //     "title": "The Reflective Practitioner",
-    //     "author": "Donald A. Schon",
-    //     "cover": "img/reflective-practitioner.jpg",
-    //     "comments": "A leading M.I.T. social scientist and consultant examines five professions (engineering, architecture, management, psychotherapy, and town planning) to show how professionals really go about solving problems. The best professionals, Donald Schon maintains, know more than they can put into words. To meet the challenges of their work, they rely less on formulas learned in graduate school than on the kind of improvisation learned in practice."
-    // }
 ];
