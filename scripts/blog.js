@@ -54,8 +54,6 @@ export function updatePost(postId, post) {
 }
 
 
-
-
 export function deletePost(postId, post) {
     const posts = loadPosts();
 
@@ -75,6 +73,7 @@ export function countPosts() {
 }
 
 export function renderPost(postId, post) {
+    // pose element (title, date, summary)
     const temp = document.getElementById('post-template');
 
     const postElement = temp.content.cloneNode(true);
@@ -90,6 +89,7 @@ export function renderPost(postId, post) {
     postSummary.textContent = post.summary;
 
 
+    // delete button for the current postId
     const deleteButton = postElement.getElementById('delete-button');
     deleteButton.addEventListener('click', (ev) => {
             ev.target.parentElement.parentElement.remove();
@@ -97,9 +97,11 @@ export function renderPost(postId, post) {
 
     })
 
+    // edit button for the current postId
     const editButton = postElement.getElementById('edit-button');
     editButton.addEventListener('click', (ev) => {
 
+        // create an edit dialog and get the (title, data, summary) from the current post
         const temp = document.getElementById('edit-template');
         const editElement = temp.content.cloneNode(true);
 
@@ -115,22 +117,25 @@ export function renderPost(postId, post) {
         const dialogMessage = editElement.getElementById('edit-post-dialog');
 
 
-
+        // edit button inside the template dialog
         const editButton = editElement.querySelector('post-options > input');
         editButton.addEventListener('click', (eve) => {
             eve.preventDefault();
 
+            // get the current post from the database
             let JSONPosts = localStorage.getItem('posts');
             let allPosts = JSON.parse(JSONPosts);
             let modifiedPost = allPosts[postId];
 
+            // update the content base on the edit template dialog result
             modifiedPost.title = postTitle.value;
             modifiedPost.date = postDate.value;
             modifiedPost.summary = postSummary.value;
 
-            if (validatePost(new FormData(eve.target.parentElement.parentElement.parentElement))) {
-                localStorage.setItem('posts', JSON.stringify(allPosts));
+            if (validatePost(new FormData(eve.target.parentElement.parentElement.parentElement))) { // basic validation
+                localStorage.setItem('posts', JSON.stringify(allPosts)); // store back to the database
 
+                // update the DOM element data
                 const t = ev.target.parentElement.parentElement.querySelector('post-title > h1');
                 t.textContent = postTitle.value;
 
@@ -146,6 +151,7 @@ export function renderPost(postId, post) {
 
         });
 
+        // cancel button within the edit template dialog
         const cancelButton = editElement.querySelector('post-options > button');
         cancelButton.addEventListener('click', () => {
             dialogMessage.close();

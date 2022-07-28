@@ -1,10 +1,12 @@
 export function loadCustomAlertEvent() {
     const customAlertButton = document.getElementById('custom-alert-button');
 
+    // create a custom dialog template
     customAlertButton.addEventListener('click', () => {
         const dialogTemp = document.getElementById('custom-dialog-template');
         const dialogClone = dialogTemp.content.cloneNode(true);
 
+        // remove unnecessary element from the custom dialog template
         const cancelButton = dialogClone.getElementById('cancel-button');
         cancelButton.remove();
         const textLabel = dialogClone.getElementById('text-label');
@@ -13,6 +15,7 @@ export function loadCustomAlertEvent() {
         const dialogMessage = dialogClone.getElementById('dialog-message');
         dialogMessage.textContent = 'Alert pressed!';
 
+        // button within the custom dialog template
         const okButton = dialogClone.getElementById('ok-button');
         okButton.addEventListener('click', () => {
             customDialog.close();
@@ -34,12 +37,14 @@ export function loadCustomConfirmEvent() {
         const dialogTemp = document.getElementById('custom-dialog-template');
         const dialogClone = dialogTemp.content.cloneNode(true);
 
+        // remove unnecessary element from the custom dialog template
         const textLabel = dialogClone.getElementById('text-label');
         textLabel.remove();
 
         const dialogMessage = dialogClone.getElementById('dialog-message');
         dialogMessage.textContent = 'Are you confirm this?';
 
+        // button within the custom dialog template
         const okButton = dialogClone.getElementById('ok-button');
         okButton.addEventListener('click', () => {
             customDialog.close();
@@ -47,6 +52,7 @@ export function loadCustomConfirmEvent() {
             output.textContent = 'The value returned by the confirm method is : true';
         });
 
+        // button within the custom dialog template
         const cancelButton = dialogClone.getElementById('cancel-button');
         cancelButton.addEventListener('click', () => {
             customDialog.close();
@@ -73,6 +79,7 @@ export function loadCustomPromptEvent() {
 
         const input = dialogClone.getElementById('input');
 
+        // button within the custom dialog template
         const okButton = dialogClone.getElementById('ok-button');
         okButton.addEventListener('click', () => {
             customDialog.close();
@@ -85,6 +92,7 @@ export function loadCustomPromptEvent() {
             output.innerHTML = `The value returned by the prompt method is : ${dirtyInput}`;
         });
 
+        // button within the custom dialog template
         const cancelButton = dialogClone.getElementById('cancel-button');
         cancelButton.addEventListener('click', () => {
             customDialog.close();
@@ -111,6 +119,7 @@ export function loadCustomSafePromptEvent() {
 
         const input = dialogClone.getElementById('input');
 
+        // button within the custom dialog template
         const okButton = dialogClone.getElementById('ok-button');
         okButton.addEventListener('click', () => {
             customDialog.close();
@@ -125,6 +134,7 @@ export function loadCustomSafePromptEvent() {
             output.innerHTML = `The value returned by the safer prompt method is : ${dirtyInput}`;
         });
 
+        // button within the custom dialog template
         const cancelButton = dialogClone.getElementById('cancel-button');
         cancelButton.addEventListener('click', () => {
             customDialog.close();

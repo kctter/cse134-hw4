@@ -7,12 +7,10 @@
         import * as Posts from './scripts/blog.js';
         import examplePosts from './scripts/examples.js';
 
-        // First, let's define the book elements.
+        // First, let's define the post elements.
         Posts.definePostElements();
 
-
-
-        // Second, populate our DB with the example books if we don't have any.
+        // Second, populate our DB with the example post if we don't have any.
         if (Posts.countPosts() === 0) {
             for (const post of examplePosts) {
                 Posts.insertPost(post);
@@ -24,8 +22,7 @@
             const postsContainer = document.getElementById("posts");
             Posts.redisplayAllPosts(postsContainer);
 
-
-            // Now, let's set up our form so we can use it for adding books.
+            // Now, let's set up our form so we can use it for adding posts.
             const addPostForm = document.getElementById("insert-post-form");
             addPostForm.addEventListener("submit", (ev) => {
                 // Stop the form submission event from continuing and refreshing the page.
@@ -37,15 +34,13 @@
 
                 // Validate the form data
                 if (Posts.validatePost(formData)) {
-                    // console.log(ev.target);
                     // The names of our form fields are identical to our book JSON, so just copy it over.
                     const post = {};
                     for (const [key, value] of formData.entries()) {
                         post[key] = value;
                     }
 
-
-                    // Insert the new book we just made and redisplay the books!
+                    // Insert the new post we just made and redisplay the books!
                     Posts.insertPost(post);
                     Posts.redisplayAllPosts(postsContainer);
                 } else {
@@ -113,7 +108,6 @@
 
 </head>
 <body>
-
 <header>
     <nav>
         <ul class="top-nav">
@@ -122,7 +116,6 @@
         </ul>
     </nav>
 </header>
-
 
 <main>
     <h1>Blog</h1>
@@ -147,6 +140,5 @@
         </form>
     </section>
 </main>
-
 </body>
 </html>
